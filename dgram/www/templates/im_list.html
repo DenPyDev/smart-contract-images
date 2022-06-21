@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Images</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta http-equiv="refresh" content="1"/>
+</head>
+<body>
+<div>
+    <table class="table table-striped w-auto table-hover table-fixed">
+        {% for col in cols %}
+        <th>{{col}}</th>
+        {% endfor %}
+
+        {% for triple in allTriples %}
+        <tr>
+
+
+            {% for val in triple %}
+
+
+            {% if forloop.counter == 2 %}
+
+            <td>{{val}} <img src=http://127.0.0.1:8000/static/{{val}}.jpg></td>
+            {% else %}
+            <td>{{val}}</td>
+            {% endif %}
+
+
+            {% endfor %}
+
+
+            <!--            <td>'http://127.0.0.1:8000/static/{allTriples[1]}.jpg'</td>-->
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
